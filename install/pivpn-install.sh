@@ -1,19 +1,12 @@
 #!/usr/bin/env bash
-
+source <(curl -s https://raw.githubusercontent.com/asylumexp/Proxmox/main/misc/build.func)
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
-source <(curl -s https://raw.githubusercontent.com/asylumexp/Proxmox/main/misc/build.func)
-
-
 color
-verb_ip6
 catch_errors
-setting_up_container
-network_check
-update_os
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y curl
@@ -42,6 +35,7 @@ EOF
 $STD bash <(curl -fsSL https://install.pivpn.io) --unattended options.conf
 msg_ok "Installed WireGuard"
 
+SPINNER_PID=""
 motd_ssh
 customize
 
