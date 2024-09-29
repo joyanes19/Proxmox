@@ -5,7 +5,8 @@
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/tteck/Proxmox/main/misc/build.func)"
+
 color
 verb_ip6
 catch_errors
