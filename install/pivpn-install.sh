@@ -5,7 +5,8 @@
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
-source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/tteck/Proxmox/main/misc/build.func)"
+source <(curl -s https://raw.githubusercontent.com/asylumexp/Proxmox/main/misc/build.func)
+
 
 color
 verb_ip6
